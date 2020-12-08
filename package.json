@@ -1,0 +1,22 @@
+{
+  "name": "privytestcase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/Choi-R/privytestcase.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Choi-R/privytestcase/issues"
+  },
+  "homepage": "https://gitlab.com/Choi-R/privytestcase#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
