@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     balanceBefore: DataTypes.INTEGER,
     balanceAfter: DataTypes.INTEGER,
     activity: DataTypes.STRING,
-    type: DataTypes.ENUM,
+    type: DataTypes.STRING, // NANTI INI ENUM
     ip: DataTypes.STRING,
     location: DataTypes.STRING,
     userAgent: DataTypes.STRING,

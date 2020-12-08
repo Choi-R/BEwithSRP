@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       type: {
-        type: Sequelize.ENUM
+        type: Sequelize.STRING, // NANTI INI ENUM
       },
       ip: {
         type: Sequelize.STRING
