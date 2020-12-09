@@ -70,12 +70,30 @@ exports.login = async (req, res) => {
 exports.profile = async (req, res) => {
     try {
         let user = await User.findByPk(req.user.id, {
+            attributes: ['username', 'email', 'createdAt', 'updatedAt'],
             include: {
                 model: User_Balance,
                 attributes: ['balance', 'balanceAchieve', 'updatedAt']
             }
         })
         success(res, user, 200)
+    }
+    catch(err) { error(res, err, 422) }
+}
+
+exports.balanceDetail = async (req, res) => {
+    try {
+        let userBalance = await User_Balance.findOne({
+            where: {userId: req.user.id},
+            attributes: ['balance', 'balanceAchieve', 'updatedAt'],
+            include: [{
+                model: User,
+                attributes: ['username', 'email', 'createdAt', 'updatedAt']
+            }, {
+                model: User_Balance_History
+            }]
+        })
+        success(res, userBalance, 200)
     }
     catch(err) { error(res, err, 422) }
 }

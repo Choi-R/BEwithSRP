@@ -12,7 +12,7 @@
     "basePath": "/api/v1",
     "tags": [
         {
-            "name": "User Collection",
+            "name": "User Domain",
             "description": ""
         }
     ],
@@ -20,7 +20,7 @@
         "/user": {
             "post": {
                 "tags": [
-                    "User Collection"
+                    "User Domain"
                 ],
                 "summary": "Register",
                 "description": "",
@@ -66,7 +66,7 @@
             },
             "put": {
                 "tags": [
-                    "User Collection"
+                    "User Domain"
                 ],
                 "summary": "Login",
                 "description": "",
@@ -108,9 +108,40 @@
             },
             "get": {
                 "tags": [
-                    "User Collection"
+                    "User Domain"
                 ],
                 "summary": "Get profile detail",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "JWT Token. Get it from register or login",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    },
+                    "422": {
+                        "description": "ERROR"
+                    }
+                }
+            }
+        },
+        "/balance": {
+            "get": {
+                "tags": [
+                    "User Domain"
+                ],
+                "summary": "User's balance detail",
                 "description": "",
                 "consumes": [
                     "application/json"
@@ -139,7 +170,7 @@
         "/topup": {
             "put": {
                 "tags": [
-                    "User Collection"
+                    "User Domain"
                 ],
                 "summary": "Top up balance",
                 "description": "",
@@ -185,7 +216,7 @@
         "/transfer/{id}": {
             "put": {
                 "tags": [
-                    "User Collection"
+                    "User Domain"
                 ],
                 "summary": "Transfer to other user",
                 "description": "",
