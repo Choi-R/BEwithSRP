@@ -69,7 +69,12 @@ exports.login = async (req, res) => {
 
 exports.profile = async (req, res) => {
     try {
-        let user = await User.findByPk(req.user.id)
+        let user = await User.findByPk(req.user.id, {
+            include: {
+                model: User_Balance,
+                attributes: ['balance', 'balanceAchieve', 'updatedAt']
+            }
+        })
         success(res, user, 200)
     }
     catch(err) { error(res, err, 422) }

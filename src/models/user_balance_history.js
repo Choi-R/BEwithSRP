@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User_Balance_History.belongsTo(models.User_Balance, {
+        foreignKey: 'userBalanceId'
+      })
     }
   };
   User_Balance_History.init({
