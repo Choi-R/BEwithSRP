@@ -21,19 +21,23 @@ module.exports = {
         type: Sequelize.STRING
       },
       type: {
-        type: Sequelize.STRING, // NANTI INI ENUM
+        type: Sequelize.ENUM('debit', 'credit'),
       },
       ip: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: "<YOUR IP>"
       },
       location: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: "<YOUR LOCATION>"
       },
       userAgent: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: "<YOUR USER AGENT>"
       },
       author: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: "<YOUR AUTHOR>"
       },
       createdAt: {
         allowNull: false,

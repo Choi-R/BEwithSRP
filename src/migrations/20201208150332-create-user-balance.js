@@ -12,10 +12,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       balance: {
-        type: Sequelize.STRING
-      },
-      code: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       balanceAchieve: {
         type: Sequelize.INTEGER

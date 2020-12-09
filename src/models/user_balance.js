@@ -15,8 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   User_Balance.init({
     userId: DataTypes.INTEGER,
-    balance: DataTypes.STRING,
-    code: DataTypes.STRING,
+    balance: DataTypes.INTEGER,
     balanceAchieve: DataTypes.INTEGER
   }, {
     sequelize,
