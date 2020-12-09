@@ -18,6 +18,52 @@
     ],
     "paths": {
         "/user": {
+            "post": {
+                "tags": [
+                    "User Collection"
+                ],
+                "summary": "Register",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string",
+                                    "example": "testing"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "testing@mail.com"
+                                },
+                                "password": {
+                                    "type": "string",
+                                    "example": "password"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "SUCCESS"
+                    },
+                    "422": {
+                        "description": "ERROR"
+                    }
+                }
+            },
             "put": {
                 "tags": [
                     "User Collection"
@@ -49,6 +95,35 @@
                                 }
                             }
                         }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    },
+                    "422": {
+                        "description": "ERROR"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "User Collection"
+                ],
+                "summary": "Get profile detail",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "JWT Token. Get it from register or login",
+                        "type": "string"
                     }
                 ],
                 "responses": {
