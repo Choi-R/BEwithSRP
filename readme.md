@@ -1,5 +1,5 @@
 # Summary
-This app was built in Javascript language (NodeJS) with ExpressJS as the framework and PostgreSQL as the DBRM. All of the credentials are already provided so just clone/download the repo, install all dependencies with 
+This app was built in Javascript language (NodeJS) with ExpressJS as the framework, PostgreSQL as the DBRM and Sequelize as the ORM. All of the credentials are already provided so just install NodeJS, clone/download the repo, install all dependencies with 
 ```
 npm i
 ```

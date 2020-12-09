@@ -5,6 +5,7 @@ const { authenticate } = require('./middlewares/auth')
 router.post('/user', userController.register)
 router.put('/user', userController.login)
 router.get('/user', authenticate, userController.profile)
+router.get('/balance', authenticate, userController.balanceDetail)
 router.put('/topup', authenticate, userController.topUp)
 router.put('/transfer/:id', authenticate, userController.transfer)
 
