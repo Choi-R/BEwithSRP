@@ -8,6 +8,16 @@ const User_Balance = index.User_Balance
 const User_Balance_History = index.User_Balance_History
 const Bank_Balance = index.Bank_Balance
 const Bank_Balance_History = index.Bank_Balance_History
+const createUB = async(userId) => {
+    try {
+        await User_Balance.create({
+            userId: userId,
+            balance: 0,
+            balanceAchieve: 0
+        })
+    }
+    catch(err) {console.log(err)}
+}
 const createUBH = async (userBalance, activity, type) => {
     try {
         await User_Balance_History.create({
@@ -35,6 +45,19 @@ const updateBalance = async (req, type, userId) => {
     catch(err) { console.log(err) }
 }
 
+exports.register = async (req, res) => {
+    try {
+        let newUser = await User.create({
+            username: req.body.username,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10)
+        })
+        createUB(newUser.id)
+        success(res, newUser, 201)
+    }
+    catch(err) { error(res, err, 422) }
+}
+
 exports.login = async (req, res) => {
     try {
         let user = await User.findOne({ where: { email: req.body.email } })
@@ -44,10 +67,18 @@ exports.login = async (req, res) => {
     catch (err) { error(res, err, 422) }
 }
 
+exports.profile = async (req, res) => {
+    try {
+        let user = await User.findByPk(req.user.id)
+        success(res, user, 200)
+    }
+    catch(err) { error(res, err, 422) }
+}
+
 exports.topUp = async (req, res) => {
     try {
-        let data = await updateBalance(req, "+")
-        createUBH(data, 'top up', 'debit')
+        let data = await updateBalance(req, "+") // user_balance.update()
+        createUBH(data, 'top up', 'debit') // user_balance_history.create()
         success(res, data, 200)
     }
     catch (err) { error(res, err, 422) }
