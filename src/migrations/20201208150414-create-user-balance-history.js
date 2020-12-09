@@ -9,7 +9,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userBalanceId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id'
+        },
+        onDelete: 'CASCADE'
       },
       balanceBefore: {
         type: Sequelize.INTEGER
