@@ -100,8 +100,8 @@ exports.balanceDetail = async (req, res) => {
 
 exports.topUp = async (req, res) => {
     try {
-        let data = await updateBalance(req, "+") // user_balance.update()
-        createUBH(data, 'top up', 'debit') // user_balance_history.create()
+        let data = await updateBalance(req, "+")
+        createUBH(data, 'top up', 'debit')
         success(res, data, 200)
     }
     catch (err) { error(res, err, 422) }
