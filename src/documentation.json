@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Documentation for PrivyID Test",
+        "description": "Documentation for [blank]",
         "version": "1.0.0",
         "title": "Documentation",
         "contact": {
@@ -298,6 +298,6 @@
     },
     "externalDocs": {
         "description": "Backend Repository",
-        "url": "https://gitlab.com/Choi-R/privytestcase"
+        "url": "https://gitlab.com/Choi-R"
     }
 }
