@@ -1,10 +1,16 @@
 {
   "development": {
-    "username": "ypvifmrz",
-    "password": "yY2O0xloP1JRGTgIonRCnzpZ6Z6RulbB",
-    "database": "ypvifmrz",
-    "host": "satao.db.elephantsql.com",
-    "dialect": "postgres"
+    "username": "bewithsrp_user",
+    "password": "ss0GH6WcmN5UQhskOtP7tFoW7tvmN0lv",
+    "database": "bewithsrp",
+    "host": "dpg-cn95himv3ddc73d5v02g-a.frankfurt-postgres.render.com",
+    "dialect": "postgres",
+    "ssl":true,
+    "dialectOptions":{
+       "ssl":{
+          "require":true
+       }
+    }  
   },
   "test": {
     "username": "root",
